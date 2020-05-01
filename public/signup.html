@@ -38,6 +38,24 @@
     <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
+        callbacks:{
+          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            var user = authResult.user;
+            var credential = authResult.credential;
+            var isNewUser = authResult.additionalUserInfo.isNewUser;
+            var providerId = authResult.additionalUserInfo.providerId;
+            var operationType = authResult.operationType;
+            // Do something with the returned AuthResult.
+            // Return type determines whether we continue the redirect automatically
+            // or whether we leave that to developer to handle.
+            return true;
+          },
+          uiShown: function() {
+            // The widget is rendered.
+            // Hide the loader.
+            document.getElementById('loader').style.display = 'none';
+          }
+        },
         signInSuccessUrl: 'index.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
@@ -127,7 +145,11 @@
             </p>
           </div>
         </div>
-        <div id="firebaseui-auth-container"></div>
+        <div class="signup-form-container">
+          <div class="signup-form-text-container">
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+          </div>
         </div>
 
       <!-- End of Page Content -->

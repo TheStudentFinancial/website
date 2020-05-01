@@ -45,10 +45,17 @@
             var isNewUser = authResult.additionalUserInfo.isNewUser;
             var providerId = authResult.additionalUserInfo.providerId;
             var operationType = authResult.operationType;
-            // Do something with the returned AuthResult.
+            const addUsername = functions.httpsCallable('addUsername');
+            addUsername({
+              id: user.uid,
+              variableName: 'name',
+              variableValue: user.displayName
+            }).catch(err=>{
+              console.log(err.message)
+            })// Do something with the returned AuthResult.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
-            return true;
+            return false;
           },
           uiShown: function() {
             // The widget is rendered.
@@ -56,7 +63,7 @@
             document.getElementById('loader').style.display = 'none';
           }
         },
-        signInSuccessUrl: 'login.html',
+        signInSuccessUrl: 'index.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
