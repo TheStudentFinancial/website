@@ -71,7 +71,7 @@ async function renderBlog(doc){
   // upvoting the article
   thumbsUp.addEventListener('click', (e)=>{
     e.stopPropagation()
-    let id =e.target.parentElement.getAttribute('data-id');
+    let id =e.target.parentElement.parentElement.getAttribute('data-id');
     const voteUp = functions.httpsCallable('upvote');
     voteUp({
       id:id
@@ -85,8 +85,10 @@ async function renderBlog(doc){
   thumbsDown.addEventListener('click', (e)=>{
     e.stopPropagation()
     const voteDown = functions.httpsCallable('downvote');
+    let id =e.target.parentElement.parentElement.getAttribute('data-id');
+
     voteDown({
-      id: e.target.parentElement.getAttribute('data-id')
+      id: id
     })
     .catch(error => {
       console.log(error.message);

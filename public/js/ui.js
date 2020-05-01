@@ -1,5 +1,3 @@
-const db = firebase.firestore();
-const functions= firebase.functions();
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails  =document.querySelector('.account-details');
