@@ -1,4 +1,4 @@
-db.collection('articles').onSnapshot(snapshot => {
+db.collection('articles').orderBy('upvotes', 'desc').onSnapshot(snapshot => {
   //document.querySelector('.blog-list').innerHTML=''
   snapshot.docs.forEach(doc => renderBlog(doc));
   });
@@ -72,6 +72,7 @@ async function renderBlog(doc){
   thumbsUp.addEventListener('click', (e)=>{
     e.stopPropagation()
     let id =e.target.parentElement.parentElement.getAttribute('data-id');
+    console.log(id)
     const voteUp = functions.httpsCallable('upvote');
     voteUp({
       id:id

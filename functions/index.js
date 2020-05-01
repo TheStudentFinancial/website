@@ -53,11 +53,22 @@ exports.addArticle = functions.https.onCall((data, context) => {
       'only admins can add articles'
     );
   }
+
+  // set the right Date
+  var d = new Date();
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var date = d.getDate();
+  var year = d.getFullYear();
+  var fullDate= date+" "+months[d.getMonth()]+ " " + year
   return admin.firestore().collection('articles').add({
     title: data.title,
     content: data.content,
+    subHeader:data.subHeader,
     upvotes: 0,
     by: data.username,
+    publishedOn: fullDate,
+    readingTime: data.readingTime,
+    author: data.author,
     lastEdit: new Date()
   });
 });
