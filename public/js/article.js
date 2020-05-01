@@ -1,5 +1,4 @@
 const queryString = window.location.search;
-console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const article = urlParams.get('article')
 renderArticle(article)

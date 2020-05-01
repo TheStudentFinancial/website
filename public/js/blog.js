@@ -1,5 +1,5 @@
 db.collection('articles').orderBy('upvotes', 'desc').onSnapshot(snapshot => {
-  //document.querySelector('.blog-list').innerHTML=''
+  document.querySelector('.blog-list').innerHTML=''
   snapshot.docs.forEach(doc => renderBlog(doc));
   });
 
