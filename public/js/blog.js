@@ -14,7 +14,7 @@ async function renderBlog(doc){
 
   let a = document.createElement('a');
   a.classList.add('blog-post-ref');
-  a.setAttribute('href', 'article.html');
+  a.setAttribute('href', `article.html?article=${doc.id}`);
 
   //the title of the article
   let header = document.createElement('h3');
