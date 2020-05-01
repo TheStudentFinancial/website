@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Dit is nodig voor de firebase moet in elke header van elke -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+
+
     <link rel="stylesheet" text="lang/css" href="style.css">
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -91,5 +99,32 @@
       </footer>
 
     </div>
+
+    <!-- Dit is nodig voor voor firebase graag onder elke pagina plakken!! -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAWKSoPggkI_lgNzNrxhLsJJBuQmUIUDls",
+        authDomain: "the-student-financial.firebaseapp.com",
+        databaseURL: "https://the-student-financial.firebaseio.com",
+        projectId: "the-student-financial",
+        storageBucket: "the-student-financial.appspot.com",
+        messagingSenderId: "649671283940",
+        appId: "1:649671283940:web:aa48521daab99f63b548f1",
+        measurementId: "G-45YWJ73LS8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      const db = firebase.firestore()
+      const auth =  firebase.auth()
+      const functions = firebase.functions()
+    </script>
   </body>
 </html>

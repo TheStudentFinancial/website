@@ -1,6 +1,3 @@
-const db = firebase.firestore();
-const functions= firebase.functions();
-
 db.collection('articles').onSnapshot(snapshot => {
   //document.querySelector('.blog-list').innerHTML=''
   snapshot.docs.forEach(doc => renderBlog(doc));

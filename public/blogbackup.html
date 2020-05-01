@@ -9,15 +9,6 @@
     <script src="navbar.js"></script>
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;600&display=swap" rel="stylesheet">
-
-    <!-- Dit is nodig voor de firebase moet in elke header van elke -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-functions.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
-
-
     <!-- Font Awesome 5 -->
     <script src="https://kit.fontawesome.com/6d88c2ba6f.js" crossorigin="anonymous"></script>
     <title>Blog | The Student Financial</title>
@@ -158,36 +149,17 @@
       </footer>
 
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.14.2/firebase-app.js"></script>
 
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/7.7.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.7.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.7.0/firebase-functions.js"></script>
 
-    <!-- Dit is nodig voor voor firebase graag onder elke pagina plakken!! -->
+     <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAWKSoPggkI_lgNzNrxhLsJJBuQmUIUDls",
-        authDomain: "the-student-financial.firebaseapp.com",
-        databaseURL: "https://the-student-financial.firebaseio.com",
-        projectId: "the-student-financial",
-        storageBucket: "the-student-financial.appspot.com",
-        messagingSenderId: "649671283940",
-        appId: "1:649671283940:web:aa48521daab99f63b548f1",
-        measurementId: "G-45YWJ73LS8"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-
-      const db = firebase.firestore()
-      const auth =  firebase.auth()
-      const functions = firebase.functions()
-    </script>
-
-    <!-- dit zijn de JavaScript files nodig voor deze pagina -->
     <script src="js/blog.js"></script>
 
   </body>

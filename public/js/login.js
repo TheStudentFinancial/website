@@ -1,5 +1,3 @@
-const auth = firebase.auth()
-
 // login
 const loginForm = document.querySelector('.login-form');
 loginForm.addEventListener('submit', (e) => {
