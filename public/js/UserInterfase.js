@@ -9,12 +9,21 @@ function setupUi(user){
   const loggedInLinks = document.querySelectorAll('.logged-in');
   if (user) {
     // toggle user UI elements
-    loggedInLinks.forEach(item => item.style.display = 'block');
+    loggedInLinks.forEach(item => item.style.display = 'flex');
     loggedOutLinks.forEach(item => item.style.display = 'none');
 
   } else {
     // toggle user elements
     loggedInLinks.forEach(item => item.style.display = 'none');
-    loggedOutLinks.forEach(item => item.style.display = 'block');
+    loggedOutLinks.forEach(item => item.style.display = 'flex');
   }
 }
+
+// logout
+// const logout = document.querySelector('#logout');
+// logout.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   auth.signOut().then(() => {
+//     console.log('signed out')
+//   })
+// });
