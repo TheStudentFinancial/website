@@ -60,6 +60,7 @@ exports.addArticle = functions.https.onCall((data, context) => {
   var date = d.getDate();
   var year = d.getFullYear();
   var fullDate= date+" "+months[d.getMonth()]+ " " + year
+  var exactTime= d.getTime()
   return admin.firestore().collection('articles').add({
     title: data.title,
     content: data.content,
@@ -69,7 +70,8 @@ exports.addArticle = functions.https.onCall((data, context) => {
     publishedOn: fullDate,
     readingTime: data.readingTime,
     author: data.author,
-    lastEdit: new Date()
+    lastEdit: new Date(),
+    timePublished:exactTime
   });
 });
 
