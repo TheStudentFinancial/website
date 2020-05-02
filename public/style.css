@@ -667,7 +667,7 @@ footer {
   width: inherit;
 }
 
-textarea {
+.comment-textarea, .reply-textarea {
   resize: none;
   width: 76vw;
   height: 8vh;
@@ -744,4 +744,24 @@ textarea {
 
 .exisiting-reply-under {
   background-color: #16a6a6;
+}
+
+.create-header {
+  margin-top: 12vh;
+  font-size: 20px;
+}
+
+.create-form {
+  margin: 2vh 2vw 2vh 2vw;
+  font-size: 15px;
+}
+
+.create-input {
+  width: 50vw;
+  height: 4vh;
+}
+
+.create-textarea {
+  resize: both;
+  border: 1px solid black;
 }
