@@ -540,7 +540,7 @@ footer {
 .login-promo {
   width: 45vw;
   background-color: lightblue;
-  height: 74vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 5vh 0 0 5vw;
@@ -638,4 +638,110 @@ footer {
 
 .signup-form-header {
   font-size: 4em;
+}
+
+.thumbscounter {
+  margin-left: 2vw;
+}
+
+.comment-section {
+  min-height: 40vh;
+  background-color: #f2f2f2;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.comment-maker {
+  background-color: white;
+  width: 80vw;
+  height: 17vh;
+  border-radius: 20px;
+  margin: 3vh 0 5vh 0;
+}
+
+.comment-form {
+  height: inherit;
+  width: inherit;
+}
+
+textarea {
+  resize: none;
+  width: 76vw;
+  height: 8vh;
+  padding: 2vh 2vw 2vh 2vw;
+  border: none;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.comment-under {
+  display: flex;
+  height: 3vh;
+  padding: 1vh 10vw 1vh 2vw;
+  justify-content: space-between;
+  background-color: #16a6a6;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.comment-action {
+  background-color: #0000b2;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  width: 7vw;
+  height: 3vh;
+  cursor: pointer;
+}
+
+.exisiting-comment {
+  width: 80vw;
+  min-height: 7vh;
+  background-color: white;
+  margin-bottom: 5vh;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.existing-comment-text {
+  white-space: pre-wrap;
+  font-family: serif;
+  min-height: 4vh;
+  padding: 2vh 2vw 2vh 2vw;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.reply-comment {
+  margin: 0 0 3vh 8vw;
+  width: 72vw;
+}
+
+.reply-textarea {
+  max-width: 68vw;
+}
+
+.existing-reply {
+  width: 72vw;
+  min-height: 7vh;
+  border-radius: 20px;
+  margin: 0 0 3vh 8vw;
+}
+
+.exisiting-reply-text {
+  white-space: pre-wrap;
+  font-family: serif;
+  min-height: 4vh;
+  padding: 2vh 2vw 2vh 2vw;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: white;
+}
+
+.exisiting-reply-under {
+  background-color: #16a6a6;
 }
