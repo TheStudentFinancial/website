@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'Rokkitt', serif;
+  font-family: serif;
 }
 
 abbr {
@@ -311,7 +311,7 @@ footer {
 }
 
 .article-type {
-  color: red;
+  color: #4f98bc;
 }
 
 .article-colofon {
@@ -675,26 +675,41 @@ footer {
   border: none;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  font-family: serif;
 }
 
 .comment-under {
   display: flex;
   height: 3vh;
-  padding: 1vh 10vw 1vh 2vw;
+  padding: 1vh 8vw 1vh 2vw;
   justify-content: space-between;
-  background-color: #16a6a6;
+  background-color: #4f98bc;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  color: #fff;
 }
 
 .comment-action {
-  background-color: #0000b2;
+  background-color: #fff;
   border: none;
-  color: white;
+  color: #000;
   border-radius: 5px;
   width: 7vw;
   height: 3vh;
   cursor: pointer;
+}
+
+.comment-action:hover {
+  background-color: #5454b3;
+  color: #fff;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .comment-action {
+    width: 12vw;
+  }
+
 }
 
 .exisiting-comment {
@@ -740,10 +755,6 @@ footer {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   background-color: white;
-}
-
-.exisiting-reply-under {
-  background-color: #16a6a6;
 }
 
 .create-header {
