@@ -130,19 +130,38 @@ exports.addComment = functions.https.onCall((data, context) => {
     );
   }
   //check comment is made by user with verified email
-
   if (context.auth.token.email_verified !== true){
     throw new functions.https.HttpsError(
       'unauthenticated',
       'Please verify your email address first'
     );
   }
-  return admin.firestore().collection('articles').doc(data.articleId).collection('comments').add({
-    user: data.username,
-    content: data.content,
-    upvotes: 0,
-    createdOn: new Date()
-  });
+  var d = new Date();
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var date = d.getDate();
+  var year = d.getFullYear();
+  var fullDate= date+" "+months[d.getMonth()]+ " " + year
+  var exactTime= d.getTime()
+  if(data.reply){
+    return admin.firestore().collection('articles').doc(data.articleId).collection('comments').doc(data.commentId).collection('subcomments').add({
+      content: data.content,
+      upvotes: 0,
+      by: data.by,
+      createdOn: new Date(),
+      created: fullDate,
+      createdOnExact:exactTime
+    });
+  }else{
+    return admin.firestore().collection('articles').doc(data.articleId).collection('comments').add({
+      content: data.content,
+      upvotes: 0,
+      by: data.by,
+      createdOn: new Date(),
+      created: fullDate,
+      createdOnExact:exactTime
+    });
+  }
+
 });
 
 // upvote callable function

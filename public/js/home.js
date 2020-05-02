@@ -6,5 +6,5 @@ db.collection('articles').orderBy('timePublished', 'desc').onSnapshot(snapshot =
     <pre class="last-article-blurb">
     ${doc.data().subHeader}
     </pre>
-    <a class="readmore" href="article.html">Read&nbsp;more!</a>`
+    <a class="readmore" href="article.html?article=${doc.id}">Read&nbsp;more!</a>`
 });
