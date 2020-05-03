@@ -19,12 +19,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome 5 -->
     <script src="https://kit.fontawesome.com/6d88c2ba6f.js" crossorigin="anonymous"></script>
-    <title>Homepage | The Student Financial</title>
+    <title>Contact | The Student Financial</title>
   </head>
   <body>
+    <?php
+    $name = $email = $message "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $name = test_input($_POST["fname"]);
+      $email = test_input($_POST["emailaddress"]);
+      $message = test_input($_POST["message"]);
+    }
+
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      mail("julian.ma@live.nl", "Contact form submission", $message);
+    }
+    ?>
     <!-- Burger dropdown -->
     <div class="burger-dropdown">
-      <a class="navbrand navlink burgerfotocontainer"><img class="brandfoto burgerfoto" src="logo.png" alt="Logo"></a>
+      <a class="navbrand navlink burgerfotocontainer" href="#"><img class="brandfoto burgerfoto" src="logo.png" alt="Logo"></a>
       <button class="burger-close" type="button" name="button"><i class="material-icons">close</i></button>
       <ul class="burgerlist">
         <li><a class="navlink" href="blog.html">Blog</a></li>
@@ -41,7 +61,7 @@
 
       <!-- Navigation bar -->
       <nav class="navbar">
-        <a class="navbrand navlink" href="index.html"><img class="brandfoto" src="logo.png" alt="Logo"></a>
+        <a class="navbrand navlink" href="#"><img class="brandfoto" src="logo.png" alt="Logo"></a>
         <ul class="navlist navinitial">
           <li><a class="navlink" href="blog.html">Blog</a></li>
           <li><a class="navlink" href="aboutus.html">About&nbsp;us</a></li>
@@ -53,7 +73,7 @@
         <button class="burgermenu" type="button" name="button"><i class="material-icons">menu</i></button>
       </nav>
       <nav class="burger-dropdown">
-        <a class="navbrand navlink" href="index.html"><img class="brandfoto" src="logo.png" alt="Logo"></a>
+        <a class="navbrand navlink" href="#"><img class="brandfoto" src="logo.png" alt="Logo"></a>
         <ul class="navlist navinitial">
           <li><a class="navlink" href="blog.html">Blog</a></li>
           <li><a class="navlink" href="aboutus.html">About&nbsp;us</a></li>
@@ -65,50 +85,25 @@
       </nav>
 
       <!-- Page content -->
-      <div class="page-content">
+      <div class="page-content contact-content">
 
-        <!-- Front banner -->
-        <div class="front-banner">
-          <img class="front-image" src="eur.jpg" alt="Erasmus University Rotterdam Campus" />
-          <div class="front-text-block">
-            <h1 class="front-message">The Student Financial</h1>
-            <h3 class="front-underscript">Connecting students with a strong interest in finance from all parts of the world</h3>
-          </div>
-        </div>
-
-        <!-- Short about us -->
-        <div class="short-about">
-          <h2 class="mission-header">Our Mission</h2>
-          <p class="mission-subscript">
-            The Student Financial offers a global platform for ambitious students with a strong
-            interest in finance to connect and to develop their abilities. We offer a platform for students who are starting out with finance to publish their ideas.
-            As a member of <abbr title="The Student Financial">TSF</abbr>, you can give constructive comments to your fellow students which connects with ambitious students from all over the world.
-            Through our platform you can discuss investment ideas. You can submit your own articles for publication and you can win awards.
-            Do you want to be a part of this community? <a class="sign-up" href="signup.html">Sign&nbsp;up!</a>
+        <div class="contact-main">
+          <h1 class="contact-header">Contact our Support and Editorial team.</h1>
+          <p class="contact-description">
+            Do you have any questions, complaints or suggestions or would you like to publish your article with us? We're all ears!<br />
+            Use the contact form to your right or <a class="contact-email" href="mailto:hello@thestudentfinancial.com">e-mail&nbsp;us</a>.
           </p>
         </div>
-
-        <!-- Last article (Later to be best article of last week or month)-->
-        <div class="last-article">
-          <img class="last-article-image" src="ackman.jpg" alt="Bill Ackman, CEO of Pershing Square">
-          <div class="last-article-text">
-            <h3 class="last-article-header">Lorem Ipsum dolor sit amet.</h3>
-            <small class="last-article-credit">Written by Bill Ackman</small>
-            <pre class="last-article-blurb">
-Curabitur finibus, odio at pretium ornare, lacus augue blandit ligula, vel tempor lorem odio vel arcu. Phasellus sit amet vehicula lacus. Ut dictum tortor ac sem ultricies, vulputate tempor erat pulvinar. Aenean a mi non nulla tempus vulputate vitae ac nulla. Phasellus sagittis, dui vitae varius semper, erat tortor egestas nisi, id euismod lacus elit vitae sapien. Donec ligula urna, ultrices eu leo a, lacinia feugiat nisl. Curabitur id ullamcorper dolor, fermentum dictum orci. Curabitur et ex vulputate, dapibus tortor eget, rhoncus urna. Nullam malesuada tincidunt lectus, eget congue felis gravida vel. Aenean blandit pharetra sollicitudin. Pellentesque ullamcorper magna eu varius viverra.
-            </pre>
-            <a class="readmore" href="article.html">Read&nbsp;more!</a>
-          </div>
+        <div class="contact-form-container">
+          <form class="contact-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <h3 class="contact-form-header">Leave us a message</h3>
+            <input class="contact-input" type="text" name="fname" placeholder="Full Name"><br />
+            <input class="contact-input" type="email" name="emailaddress" placeholder="Email Address"><br />
+            <textarea class="contact-textarea" name="message" rows="12" cols="35" placeholder="Message"></textarea><br />
+            <input class="contact-submit" type="submit" name="submit" value="Submit"><br />
+          </form>
         </div>
 
-        <!-- Contact -->
-        <div class="main-contact">
-          <div class="left">
-            <h3 class="contact-email">Send us an email!</h3>
-            <p class="contact-subscript">Would you like to publish your article?<br />Do you have any suggestions?<br />Would you like to ask us a question?<br /></p>
-          </div>
-          <h4 class="contact-cta">Dont hesitate, <a class="mail" href="mailto:hello@thestudentfinancial.com">Email us!</a></h4>
-        </div>
 
       <!-- End of Page Content -->
       </div>
@@ -126,15 +121,15 @@ Curabitur finibus, odio at pretium ornare, lacus augue blandit ligula, vel tempo
           <div class="footer-links">
             <ul class="fuseful">
               <li class="footerlink"><a class="footerref" href="#">Sitemap</a></li>
-              <li class="footerlink"><a class="footerref" href="#">Blog</a></li>
+              <li class="footerlink"><a class="footerref" href="blog.html">Blog</a></li>
             </ul>
             <ul class="fuseful">
-              <li class="footerlink"><a class="footerref" href="#">About&nbsp;Us</a></li>
-              <li class="footerlink"><a class="footerref" href="#">Contact</a></li>
+              <li class="footerlink"><a class="footerref" href="aboutus.html">About&nbsp;Us</a></li>
+              <li class="footerlink"><a class="footerref" href="contact.html">Contact</a></li>
             </ul>
             <ul class="fuseful">
-              <li class="footerlink"><a class="footerref" href="#">Log&nbsp;in</a></li>
-              <li class="footerlink"><a class="footerref" href="#">Sign&nbsp;up</a></li>
+              <li class="footerlink"><a class="footerref" href="login.html">Log&nbsp;in</a></li>
+              <li class="footerlink"><a class="footerref" href="signup.html">Sign&nbsp;up</a></li>
             </ul>
           </div>
           <small class="footer-copyright">Copyright &copy; <span id="copyright-year"></span> The Student Financial. All Rights Reserved.</small>
@@ -143,6 +138,14 @@ Curabitur finibus, odio at pretium ornare, lacus augue blandit ligula, vel tempo
       </footer>
 
     </div>
+
+    <!-- Form validation -->
+    <script language=”JavaScript”>
+    var frmvalidator = new Validator(“contactform”);
+    frmvalidator.addValidation(“name”,”req”,”Please provide your name”);
+    frmvalidator.addValidation(“email”,”req”,”Please provide your email”);
+    frmvalidator.addValidation(“email”,”email”, “Please enter a valid email address”);
+</script>
 
     <!-- Dit is nodig voor voor firebase graag onder elke pagina plakken!! -->
 
@@ -170,10 +173,7 @@ Curabitur finibus, odio at pretium ornare, lacus augue blandit ligula, vel tempo
       const auth =  firebase.auth()
       const functions = firebase.functions()
     </script>
-
-    <script src="js/home.js"></script>
     <script src="js/UserInterface.js"></script>
-
 
   </body>
 </html>
