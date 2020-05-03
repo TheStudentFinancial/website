@@ -3,7 +3,7 @@ const guideList = document.querySelector('.guides');
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log('user logged in: ', user);
+    console.log('user logged in: ', user.admin);
     db.collection('articles').orderBy('upvotes', 'desc').onSnapshot(snapshot => {
       guideList.innerHTML='';
       snapshot.docs.forEach(doc => renderArticle(doc));
@@ -21,7 +21,7 @@ auth.onAuthStateChanged(user => {
 
     db.collection('articles').onSnapshot(snapshot => {
       guideList.innerHTML='';
-      
+
       snapshot.docs.forEach(doc => renderArticle(doc));
       setupUI(user)
     }, function(error) {

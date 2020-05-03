@@ -1,10 +1,10 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   setupUi(user)
+  console.log(user)
 });
 
 function setupUi(user){
-  console.log(user)
   const loggedOutLinks = document.querySelectorAll('.logged-out');
   const loggedInLinks = document.querySelectorAll('.logged-in');
   if (user) {
@@ -27,3 +27,13 @@ logout.addEventListener('click', (e) => {
     console.log('signed out')
   })
 });
+
+// const addAdminRole = functions.httpsCallable('addAdminRole');
+// addAdminRole({
+//   email: 'floris.haverman@gmail.com'
+// }).then(() => {
+//   // close the create modal & reset form
+//   console.log('you are now an admin')
+// }).catch(err => {
+//   console.log(err.message);
+// });

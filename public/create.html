@@ -46,9 +46,9 @@
           <li><a class="navlink" href="blog.html">Blog</a></li>
           <li><a class="navlink" href="aboutus.html">About&nbsp;us</a></li>
           <li><a class="navlink" href="contact.html">Contact</a></li>
-          <li><a class="navlink" href="login.html">Log&nbsp;in</a></li>
-          <li><a class="navlink" href="signup.html">Sign&nbsp;up</a></li>
-          <li><a class="navlink navlogout" href="#">Log&nbsp;out</a></li>
+          <li><a class="navlink logged-out" style="display: none;" href="login.html">Log&nbsp;in</a></li>
+          <li><a class="navlink logged-out" style="display: none;"href="signup.html">Sign&nbsp;up</a></li>
+          <li><a class="navlink navlogout logged-in" style="display: none;" id="logout">Log&nbsp;out</a></li>
         </ul>
         <button class="burgermenu" type="button" name="button"><i class="material-icons">menu</i></button>
       </nav>
@@ -70,13 +70,14 @@
           This page enables administrators to upload articles to the blog. Note: only administrators can do this.<br />
           If you are not an administrator, but you want to have your article published on The Student Financial, <a href="mailto:hello@thestudentfinancial.com">Email us!</a>
         </h1>
-        <form class="create-form" action="index.html" method="post">
+        <!-- action="index.html" -->
+        <form class="create-form"  method="post">
           <label for="titel">Title</label><br />
           <input class="create-input" type="text" id="title" name="title" placeholder="Title"><br />
           <label for="subheader">Subheader</label><br />
-          <input class="create-input" type="text" name="subheader" placeholder="Subheader"><br />
+          <input class="create-input" type="text" id="subHeader" name="subheader" placeholder="Subheader"><br />
           <label for="author">Author&nbsp;name</label><br />
-          <input class="create-input"  type="text" name="author" placeholder="Author name"><br />
+          <input class="create-input"  type="text" id="author" name="author" placeholder="Author name"><br />
           <label for="content">Content</label><br />
           <textarea id="create-textarea" name="content" placeholder="Content of the article" rows="20" cols="100"></textarea><br />
           <p>Warning: This publish button is definitive</p>
@@ -145,6 +146,7 @@
       const auth =  firebase.auth()
       const functions = firebase.functions()
     </script>
+    <script src="js/create.js"></script>
     <script src="js/UserInterface.js"></script>
 
   </body>
