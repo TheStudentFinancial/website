@@ -45,6 +45,18 @@
             var isNewUser = authResult.additionalUserInfo.isNewUser;
             var providerId = authResult.additionalUserInfo.providerId;
             var operationType = authResult.operationType;
+            const addUsername = functions.httpsCallable('addUsername');
+            var name='Unknown'
+            if (user.displayName){
+              name=user.displayName
+            }
+            addUsername({
+              id: user.uid,
+              variableName: 'name',
+              variableValue: name
+            }).catch(err=>{
+              console.log(err.message)
+            })
             // Do something with the returned AuthResult.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
