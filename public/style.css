@@ -449,7 +449,7 @@ footer {
 }
 
 .blog-main {
-  background-color: lightblue;
+  background-color: #a4dded;
   font-size: 20px;
   margin-top: 12vh;
   padding: 3vw;
@@ -461,11 +461,11 @@ footer {
 
 .blog-selfwrite {
   text-decoration: none;
-  color: red;
+  color: #ff2400;
 }
 
 .blog-selfwrite:hover {
-  color: blue;
+  color: #5454b3;
 }
 
 .blog-post {
@@ -501,12 +501,12 @@ footer {
 }
 
 .readfull {
-  color: red;
+  color: #ff2400;
   margin-bottom: 1vh;
 }
 
 .readfull:hover {
-  color: blue;
+  color: #0000e5;
 }
 
 @media only screen and (max-height: 700px) {
@@ -775,4 +775,97 @@ footer {
 .create-textarea {
   resize: both;
   border: 1px solid black;
+}
+
+.navlogout {
+  cursor: pointer;
+}
+
+.contact-content {
+  background: #fff;
+  background: -webkit-linear-gradient(top left, #fff 55%, #5454b3 45%);
+  background: -o-linear-gradient(top left, #fff 55%, #5454b3 45%);
+  background: linear-gradient(to bottom right, #fff 55%, #5454b3 45%);
+  display: flex;
+}
+
+.contact-main {
+  font-size: 20px;
+  margin-top: 12vh;
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  height: 79vh;
+}
+
+.contact-header {
+  font-size: 3em;
+  margin: 10vh 0 0 5vw;
+}
+
+.contact-description {
+  font-size: 0.8em;
+  margin: 0 0 0 5vw;
+}
+
+.contact-form-container {
+  margin: 12vh 0 0 0;
+  height: 79vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  background-color: white;
+  height: 60vh;
+  width: 30vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+  padding: 2vh 2vw 2vh 2vw;
+}
+
+.contact-form-header {
+  margin: 0 0 3vh 0;
+}
+
+.contact-input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  font-size: 0.8em;
+  margin: 0 0 2vh 0;
+}
+
+.contact-input:hover, .contact-input:focus, .contact-textarea:hover, .contact-textarea:focus {
+  border-bottom: 1px solid #4f98bc;
+}
+
+.contact-textarea {
+  border: none;
+  resize: none;
+  border-bottom: 1px solid lightgray;
+  font-family: serif;
+  font-size: 0.8em;
+}
+
+.contact-submit {
+  border-radius: 20px;
+  background-color: #5454b3;
+  border: none;
+  width: 10vw;
+  height: 5vh;
+  color: #fff;
+  font-size: 0.7em;
+  margin: 3vh 0 0 0;
+  cursor: pointer;
+}
+
+.contact-email {
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.contact-email:hover, .contact-email:focus {
+  color: #5454b3;
 }
