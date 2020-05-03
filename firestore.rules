@@ -17,5 +17,8 @@ service cloud.firestore {
     match /articles/{articleId}/comments/{commentsId}{
       allow read;
     }
+    match /articles/{articleId}/comments/{commentsId}/subcomments/{subcommentsId}{
+      allow read;
+    }
   }
 }

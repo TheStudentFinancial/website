@@ -127,7 +127,9 @@ function renderReply(article,reply,commentId=''){
   let name= document.createElement('p') ;
   name.classList.add('comment-name');
   var user = auth.currentUser;
-  name.textContent = user.displayName;
+  if (user){name.textContent = user.displayName}
+  else{name.textContent='Log in to comment'}
+
   let input= document.createElement('input') ;
   input.classList.add('comment-action');
   input.setAttribute('name', 'comment-submit');

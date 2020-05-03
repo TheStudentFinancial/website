@@ -31,9 +31,9 @@
         <li><a class="navlink" href="aboutus.html">About&nbsp;us</a></li>
         <li><a class="navlink" href="contact.html">Contact</a></li>
         <li><hr class="navhr" /></li>
-        <li><a class="navlink" href="login.html">Log&nbsp;in</a></li>
-        <li><a class="navlink" href="signup.html">Sign&nbsp;up</a></li>
-        <li><a class="navlink navlogout" href="#">Log&nbsp;out</a></li>
+        <li><a class="navlink logged-out" style="display: none;" href="login.html">Log&nbsp;in</a></li>
+        <li><a class="navlink logged-out" style="display: none;"href="signup.html">Sign&nbsp;up</a></li>
+        <li><a class="navlink navlogout logged-in" style="display: none;" id="logout">Log&nbsp;out</a></li>
       </ul>
     </div>
 
@@ -145,5 +145,7 @@
       const auth =  firebase.auth()
       const functions = firebase.functions()
     </script>
+    <script src="js/UserInterface.js"></script>
+
   </body>
 </html>
